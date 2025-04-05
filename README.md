@@ -22,12 +22,12 @@
 
 ### 开发模式外网访问
 
-前端访问：
+#### 前端访问
 ```bash
 cloudflared -url http://127.0.0.1:9000
 ```
 
-后端访问：
+#### 后端访问
 ```bash
 cloudflared -url http://127.0.0.1:8001
 ```
@@ -36,16 +36,19 @@ cloudflared -url http://127.0.0.1:8001
 
 项目使用 makefile 简化常用命令：
 
+| 命令 | 说明 |
+|------|------|
+| `make init` | 安装前后端依赖 |
+| `make b` | 开发模式启动后端 |
+| `make f` | 开发模式启动前端 |
+| `make db` | 启动开发数据库 |
+
+## 常见问题
+
+### Git 配置
+如果遇到 git 缺少用户名密码无法提交的问题，请运行以下命令：
+
 ```bash
-# 安装前后端依赖
-make init
-
-# 开发模式启动后端
-make b
-
-# 开发模式启动前端
-make f
-
-# 启动开发数据库
-make db
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 ```
